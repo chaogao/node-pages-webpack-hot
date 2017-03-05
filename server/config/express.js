@@ -37,7 +37,7 @@ module.exports = function (app, passport) {
   // use webpack and hot realod
   if (env == 'dev') {
     let webpackDevConfig = require(path.resolve(config.root, './fe/webpack.config.js'));
-    
+
     // attach to the compiler & the server
     app.use(webpackDevMiddleware(compiler, {
       // public path should be the same with webpack config
@@ -63,7 +63,7 @@ module.exports = function (app, passport) {
   // check layout exist
   app.use((req, res, next) => {
     let layoutPath = path.join(config.templateRoot, config.layoutTemplate);
-    let filename = path.join(compiler.outputPath, config.layoutTemplate);
+    let filename = compiler.outputPath + config.layoutTemplate;
 
     compiler.outputFileSystem.readFile(filename, function(err, result) {
       let fileInfoLayout = path.parse(layoutPath);

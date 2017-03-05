@@ -68,6 +68,15 @@ let createRules = function (extractInstance) {
           name: config.staticRoot + '/assets_url/[name].[hash:7].[ext]'
         }
       }
+    },
+    {
+      test: /\.js$/,
+      loader: 'babel-loader',
+      exclude: /node_modules/,
+      query: {
+        presets: ['es2015'],
+        plugins: ['transform-runtime']
+      }
     }
   ];
 

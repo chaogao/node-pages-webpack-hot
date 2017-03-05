@@ -1,6 +1,6 @@
 const path = require('path');
 const port = process.env.PORT || 8080;
-const env = process.env.NODE_ENV || 'prod';
+const env = process.env.NODE_ENV || 'dev';
 
 const CONFIG_BUILD = {
   env: env,

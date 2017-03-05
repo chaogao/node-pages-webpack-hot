@@ -1,1 +1,3 @@
-console.log('layout');
+var a = () => {
+  console.log('layout');
+}

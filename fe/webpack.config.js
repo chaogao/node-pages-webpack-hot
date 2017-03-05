@@ -74,17 +74,7 @@ var webpackConfig = {
   plugins: webpackPlugins,
 
   module: {
-    rules: webpackRules,
-    loaders: [
-      {
-        test: /\.js$/,
-        loader: 'babel-loader',
-        query: {
-          presets: ['es2015'],
-          babelrc: false
-        }
-      }
-    ]
+    rules: webpackRules
   }
 };
 

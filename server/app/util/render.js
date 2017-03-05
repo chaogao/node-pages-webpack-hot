@@ -5,10 +5,10 @@ let fs = require('fs');
 let mkdirp = require('mkdirp');
 
 module.exports = (res, template) => {
-  var filename = path.join(compiler.outputPath, template);
+  let filename = compiler.outputPath + template;
 
   compiler.outputFileSystem.readFile(filename, function(err, result) {
-    var fileInfo = path.parse(path.join(config.templateRoot, filename));
+    let fileInfo = path.parse(path.join(config.templateRoot, filename));
 
 
     mkdirp(fileInfo.dir, () => {

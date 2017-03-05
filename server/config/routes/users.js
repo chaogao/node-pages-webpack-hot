@@ -1,8 +1,8 @@
 let express = require('express');
 let router = express.Router();
 
-let userCtr = require('../../app/controllers/user');
+let usersCtr = require('../../app/controllers/users');
 
-router.get('/login', userCtr.login);
+router.get('/list', usersCtr.list);
 
 module.exports = router;
