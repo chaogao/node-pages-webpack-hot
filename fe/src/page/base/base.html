@@ -1,0 +1,20 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>{% block title %}My Site{% endblock %}</title>
+  <!--webpack_style_placeholder-->
+  {% block style %}{%endblock%}
+</head>
+<body>
+  <header>Express && webpack && pages</header>
+  {% block content %}{% endblock %}
+
+  <!--webpack_script_placeholder-->
+  {% block script %}{%endblock%}
+  <footer>
+    <hr/>
+    <a href="mailto:gaochao04@gmail.com">mail me</a>
+  </footer>
+</body>
+</html>
