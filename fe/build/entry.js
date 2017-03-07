@@ -20,7 +20,11 @@ let getEntry = () => {
     if (fs.existsSync(htmlFile)) {
       let pathIndex = file.dir.indexOf(config.src);
 
-      entrys[config.staticRoot + file.dir.slice(srcLength) + '/' + file.name] = [path.resolve(_file), hotMiddlewareScript];
+      if (config.dev == 'dev') {
+        entrys[config.staticRoot + file.dir.slice(srcLength) + '/' + file.name] = [path.resolve(_file), hotMiddlewareScript];
+      } else {
+        entrys[config.staticRoot + file.dir.slice(srcLength) + '/' + file.name] = path.resolve(_file);
+      }
     }
   });
 

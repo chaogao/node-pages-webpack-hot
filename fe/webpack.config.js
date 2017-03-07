@@ -68,7 +68,8 @@ var webpackConfig = {
 
   output: {
     path: conf.CONFIG_BUILD.path,
-    filename: "[name].js"
+    filename: "[name].js",
+    publicPath: conf.CONFIG_BUILD.publicPath
   },
 
   plugins: webpackPlugins,

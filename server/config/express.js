@@ -13,25 +13,20 @@ const methodOverride = require('method-override');
 
 const winston = require('winston');
 
-const env = process.env.NODE_ENV || 'development';
+const env = process.env.NODE_ENV || 'dev';
 const config = require('../config');
 const swig = require('swig')
 const path = require('path');
 const fs = require('fs');
 const mkdirp = require('mkdirp');
 
-
 const webpackDevMiddleware = require('webpack-dev-middleware');
 const webpackHotMiddleware = require('webpack-hot-middleware');
 const compiler = require('./webpack');
 
-/**
- * Expose
- */
-
 module.exports = function (app, passport) {
   // local variables for all views
-  app.locals.env = process.env.NODE_ENV || 'dev';
+  app.locals.env = env;
   app.locals.reload = true;
 
   // use webpack and hot realod
@@ -48,6 +43,8 @@ module.exports = function (app, passport) {
       }
     }));
     app.use(webpackHotMiddleware(compiler));
+  } else {
+    app.use('/static', express.static(config.staticRoot));
   }
 
   // Use winston on production
@@ -61,19 +58,21 @@ module.exports = function (app, passport) {
   }
 
   // check layout exist
-  app.use((req, res, next) => {
-    let layoutPath = path.join(config.templateRoot, config.layoutTemplate);
-    let filename = compiler.outputPath + config.layoutTemplate;
+  if (env == 'dev') {
+    app.use((req, res, next) => {
+      let layoutPath = path.join(config.templateRoot, config.layoutTemplate);
+      let filename = compiler.outputPath + config.layoutTemplate;
 
-    compiler.outputFileSystem.readFile(filename, function(err, result) {
-      let fileInfoLayout = path.parse(layoutPath);
+      compiler.outputFileSystem.readFile(filename, function(err, result) {
+        let fileInfoLayout = path.parse(layoutPath);
 
-      mkdirp(fileInfoLayout.dir, () => {
-        fs.writeFileSync(layoutPath, result);
-        next();
+        mkdirp(fileInfoLayout.dir, () => {
+          fs.writeFileSync(layoutPath, result);
+          next();
+        });
       });
     });
-  });
+  }
 
   app.use(morgan(log));
 

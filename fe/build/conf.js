@@ -6,7 +6,7 @@ const CONFIG_BUILD = {
   env: env,
   ext: 'html', // tempate ext
   src: path.resolve(__dirname, '../src'), // source code path
-  path: env == 'dev' ? '/' : 'dist', // base output path
+  path: env == 'dev' ? '/' : path.resolve(__dirname, '../dist'), // base output path
   templateRoot: 'templates', // tempate output path
   staticRoot: 'static', // static output path
   serverLayoutName: 'base', // swig layout name , only one file
