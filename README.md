@@ -18,7 +18,7 @@
 ```
 
 #### DEMO：
-![ezgif-2-5c3bbb985e.gif](http://oajua4pqj.qnssl.com/o_1bapdmsck4oe1utg1l3e97a1apk7.gif)
+![ezgif-2-5c3bbb985e.gif](http://oajua4pqj.qnssl.com/o_1bapeivda1g9o1ucm1r14fd0fclh.gif)
 
 ### 简书
 [多页架构的前后端分离方案](http://www.jianshu.com/p/1a452981f510)
