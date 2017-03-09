@@ -1,1 +1,1 @@
-require('./list.less');
+require('./list.styl');

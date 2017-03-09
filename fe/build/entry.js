@@ -20,7 +20,7 @@ let getEntry = () => {
     if (fs.existsSync(htmlFile)) {
       let pathIndex = file.dir.indexOf(config.src);
 
-      if (config.dev == 'dev') {
+      if (config.env == 'dev') {
         entrys[config.staticRoot + file.dir.slice(srcLength) + '/' + file.name] = [path.resolve(_file), hotMiddlewareScript];
       } else {
         entrys[config.staticRoot + file.dir.slice(srcLength) + '/' + file.name] = path.resolve(_file);
