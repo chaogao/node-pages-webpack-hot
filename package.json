@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "cross-env NODE_ENV=dev supervisor -w server -e node,js,html,fe server/server.js",
+    "start": "cross-env NODE_ENV=dev supervisor -w server -e fe server/server.js",
     "prod": "cross-env NODE_ENV=prod webpack --config fe/webpack.config.js & cross-env NODE_ENV=prod node server/server.js",
     "build": "cross-env NODE_ENV=prod webpack --config fe/webpack.config.js "
   },

@@ -9,6 +9,9 @@
 <body>
   <header>Express && webpack && pages</header>
   {% block content %}{% endblock %}
+  {% if env == 'dev' %}
+    <script src="/reload/reload.js"></script>
+  {% endif %}
 
   <!--webpack_script_placeholder-->
   {% block script %}{%endblock%}
