@@ -20,8 +20,8 @@
 #### DEMO：
 ![ezgif-2-dec6b379f7.gif](http://upload-images.jianshu.io/upload_images/4780891-05b942ea9dec8ae4.gif?imageMogr2/auto-orient/strip)
 
-### 简书
-[多页架构的前后端分离方案](http://www.jianshu.com/p/1a452981f510)
+### segmentfault
+[多页架构的前后端分离方案](https://segmentfault.com/a/1190000008644787)
 
 #### License (MIT)
 <[gaochao04@gmail.com](mailto:gaochao04@gmail.com)>
